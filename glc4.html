@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Fixed fullscreen backgrounds - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="assets/css/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/examples.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap-icons/bootstrap-icons.css" />
+	
+	<link rel="stylesheet" type="text/css" href="assets/swiper/swiper-bundle.min.css" />
+	
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+	<link href="assets/css/boxicons.min.css" rel="stylesheet">
+	<link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+	<link href="assets/css/aos.css" rel="stylesheet">
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+
+	</style>
+	
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="#firstPage">LC Multimedios<span></span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="#secondPage">NOSOTROS</a></li>
+          <li><a class="nav-link scrollto" href="#3rdPage">PLATAFORMAS</a></li>
+          <li><a class="nav-link scrollto " href="#cobertura">COBERTURA</a></li>
+          <li><a class="nav-link scrollto" href="#contacto">CONTACTO</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+<!-- End Header -->
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video id="myVideo" loop muted data-autoplay playsinline>
+			<source src="assets/img/office-01.mp4" type="video/mp4">
+		</video>
+		
+	<div class="layer aos-init aos-animate" data-aos="fade-up">
+      <div class="row justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1 style="font-size: 45px; font-family: 'Poppins', sans-serif;"> Somos el grupo de medios más importante de la región </h1>
+          <h2 style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 22px; color: #fff;">Hacemos periodismo, lo hacemos con pasión</h2>
+        </div>
+      </div>
+    </div>
+		
+	</div>
+	
+<!-- ======= MEDIOS Section ======= -->
+<div class="section" id="section1">
+ <section class="clients">
+  <div class="container">
+
+    <div class="clients-slider swiper">
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="delsiglo" alt="Estación Del Siglo"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="fm903" alt="Fm 90.3"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="lacapi" alt="Diario La Capital"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="lared" alt="Radio La Red Rosario"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="lt8" alt="AM 830 LT8"></div>
+		<div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="unosf" alt="Diario UNO Santa Fe"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="lt15" alt="AM 560 LT15"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="metropoli" alt="Metropoli"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="una" alt="FM Una 88.7"></div>
+        <div class="swiper-slide"><img src="assets/img/logos-byn/transparente.png" class="unoer" alt="Diario UNO Entre Ríos"></div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- FIN MEDIOS -->
+      
+ <div class="container aos-init aos-animate">
+ 
+        <div class="section-title">
+          <h2>Valores</h2>
+          <p style="color: #fff;">Nosotros</p>
+        </div>
+
+	<div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h2><a href="">MISIÓN</a></h2>
+              <p style="color: #fff; font-family: 'Poppins', sans-serif; font-weight: 300;">Lorem Ipsum is simply dummy text of the printing and typesetting industry, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <h2><a href="">VISIÓN</a></h2>
+              <p style="color: #fff; font-family: 'Poppins', sans-serif; font-weight: 300;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <h2><a href="">ESTRATEGIA</a></h2>
+              <p style="color: #fff; font-family: 'Poppins', sans-serif; font-weight: 300;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+        </div>
+  </div>       
+</div>
+	
+
+	<div class="section" id="section2">
+
+	
+	
+	</div>
+	
+	
+	
+<div class="section" id="section3">
+	<h1>One Image = One thousand words</h1>
+	</div>
+</div>
+
+	
+<script type="text/javascript" src="assets/js/fullpage.js"></script>
+<script type="text/javascript" src="assets/js/examples.js"></script>
+	
+<script src="assets/js/aos.js"></script>
+<script src="assets/swiper/swiper-bundle.min.js"></script>
+	
+<script src="assets/js/purecounter_vanilla.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/glightbox.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+	
+<script src="assets/js/main.js"></script>
+	
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        verticalCentered: false,
+		        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+
+        //to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+        css3:false
+    });
+</script>
+	
+	
+</body>
+</html>
